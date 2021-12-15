@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+
+
+{% block content %}
+
+{# Load CSS and JavaScript #}
+
+margin : 10px 20px ;
+margin : 10px 20px 30 px;
+
+<div class="my-5" style="max-width: 600px; margin: auto">
+
+    <div class="my-5">
+        <h2>Create Profile</h2>
+    </div>
+    <form action="{% url 'profileapp:create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input class="btn btn-dark rounded-pill px-5" type="submit">
+    </form>
+</div>
+{% endblock %}
