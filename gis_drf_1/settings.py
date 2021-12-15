@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accountapp',
+    'profileapp',
 
     #third party app
     'bootstrap5',
