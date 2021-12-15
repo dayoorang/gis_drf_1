@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}
 
 {% block content %}
-<div>
+<div class="my-5" style="max-width: 600px; magin:auto;">
 
     <div class="my-5">
         <h3>Update Account</h3>
@@ -10,7 +11,7 @@
     <div>
         <form action="{% url 'accountapp:update' pk=target_user.pk">
             {% csrf_token %}
-            {{ form }}
+            {% bootstrap_form form %}
             <input type="submit" class="btn btn-dark rounded-pill">
         </form>
     </div>
