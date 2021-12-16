@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     'accountapp',
     'profileapp',
+    'articleapp',
 
     #third party app
     'bootstrap5',
