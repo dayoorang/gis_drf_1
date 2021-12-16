@@ -4,11 +4,16 @@
 
 
 
-<div>
+<div class="my-5">
     <!-- Profile 들어가는 부분-->
+
+    {% if target_user.profile.image %}
+    <img style="width: 13rem; hegiht: 13rem; border-radius: 20rem; object-fit: cover;"
+            src="{{ target_user.profile.image.url }}" alt="">
+    {% endif %}
     <div>
         <h1>{{ target_user.profile.nickname }}</h1>
-        <p>{{ target_user.date_joined }}</p>
+        <h4>{{ target_user.profile.message }}</h4>
     </div>
 
 
