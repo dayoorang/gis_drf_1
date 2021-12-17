@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="my-5" style="max-width: 600px; magin:auto;">
+
+    <div class="my-5">
+        <h3>Delete Article</h3>
+    </div>
+
+    <div>
+        <form action="{% url 'articleapp:delete' pk=target_article.pk %}"  method="post">
+
+            <input type="submit" class="btn btn-danger rounded-pill">
+        </form>
+    </div>
+</div>
+{% endblock %}

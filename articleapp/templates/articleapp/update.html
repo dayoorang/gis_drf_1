@@ -2,14 +2,14 @@
 {% load bootstrap5 %}
 
 {% block content %}
-<div class="my-5" style="max-width: 600px; magin:auto;">
+<div class="my-5" style="max-width: 600px; margin:auto;">
 
     <div class="my-5">
-        <h3>Update Account</h3>
+        <h3>Update Article</h3>
     </div>
 
     <div>
-        <form action="{% url 'accountapp:update' pk=target_user.pk" ">
+        <form action="{% url 'articleapp:update' pk=target_article.pk %}"  method='post' enctype="multipart/form-data>
             {% csrf_token %}
             {% bootstrap_form form %}
             <input type="submit" class="btn btn-dark rounded-pill">

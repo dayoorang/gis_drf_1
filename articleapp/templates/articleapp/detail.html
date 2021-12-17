@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div style="max-width: 400px; margin: auto;">
+    <div class="my-5">
+
+      <h1>{{ target_article.title }}</h1>
+      <h4>{{ target_article.created_at }}</h4>
+
+      {% if target_article.image %}
+      <img style="border-radius: 2rem; width: 100%"
+           src="{{ target_article.image.url }}" alt="">
+      {% endif %}
+
+    </div>
+
+    <div>
+
+      {{ target_article.content | safe }}
+
+    </div>
+
+    <div>
+      {% if target_article.writer == user %}
+      <div>
+        <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary rounded-pill px-5">Update Article</a>
+      </div>
+          <div>
+        <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-danger rounded-pill px-5">Delete Article</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+{% endblock %}
